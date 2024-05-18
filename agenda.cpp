@@ -47,7 +47,7 @@ void removerNomeMenu(agenda *&nome, agenda *&primeiroNome) //apresenta a confirm
 {
   char opcao = 'a';
   
-  system("cls"); //limpa a tela
+  system("clear"); //limpa a tela
     
   cout << "Remover nome" << endl << endl;
    
@@ -75,7 +75,7 @@ void removerNomeMenu(agenda *&nome, agenda *&primeiroNome) //apresenta a confirm
         
         removerNome(nome, primeiroNome);   
         
-        system("cls"); //limpa a tela
+        system("clear"); //limpa a tela
     
         cout << "Remoção concluida" << endl << endl << endl;
         cout << "Pressione qualquer tecla para continuar" << endl;
@@ -84,7 +84,7 @@ void removerNomeMenu(agenda *&nome, agenda *&primeiroNome) //apresenta a confirm
       break;
 
       case 'N':
-        system("cls"); //limpa a tela
+        system("clear"); //limpa a tela
     
         cout << "Remoção cancelada" << endl << endl << endl;
         cout << "Pressione qualquer tecla para continuar" << endl;
@@ -141,7 +141,7 @@ void inserirNomeMenu(agenda *&primeiroNome) //apresenta menu e lê os dados para
   char buffer[TAMANHO_NUMERO];
   agenda *novo = new agenda;
     
-  system("cls");  //limpa a tela
+  system("clear");  //limpa a tela
   
   cout << "Inserir nome" << endl << endl;
   
@@ -181,14 +181,14 @@ void modificarNome(agenda *&nome, agenda *&primeiroNome)
   char buffer[TAMANHO_NOME];     
   agenda *novo = new agenda;
      
-  system("cls"); //limpa a tela 
+  system("clear"); //limpa a tela 
   
   cout << "Modificar nome" << endl << endl;
   
   cout << "Caso não queira modificar um campo, pressione ENTER" << endl << endl;
   
-  cout << "Nome: " << nome->nome << endl;
-  cout << "Novo nome: ";
+  cout << "Nome:" << nome->nome << endl;
+  cout << "Novo nome:";
   cin.getline(buffer, TAMANHO_NOME);
   
   if(strlen(buffer) != 0) //tamanho 0 representa nao mudar o nome
@@ -207,7 +207,7 @@ void modificarNome(agenda *&nome, agenda *&primeiroNome)
       strcpy(novo->nome, nome->nome);
   }  
   
-  cout << "Email: " << nome->email << endl;
+  cout << "Email:" << nome->email << endl;
   cout << "Novo email:";
   cin.getline(buffer, TAMANHO_NOME);
   
@@ -228,16 +228,16 @@ void modificarNome(agenda *&nome, agenda *&primeiroNome)
   }  
   
   cout << "Telefone:" << nome->telefone << endl;
-  cout<<"Novo ano:";
+  cout << "Novo telefone:";
   cin.getline(buffer, TAMANHO_NUMERO);
   
-  if(strlen(buffer)!=0) //tamanho 0 representa nao mudar o nome
+  if(strlen(buffer) != 0) //tamanho 0 representa nao mudar o nome
     novo->telefone = atoi(buffer);
   else
     novo->telefone = nome->telefone;
   
   cout << "Endereço:" << nome->endereco << endl;
-  cout<<"Novo endereço:";
+  cout << "Novo endereço:";
   cin.getline(buffer, TAMANHO_NUMERO);
   
   if(strlen(buffer) != 0) //tamanho 0 representa nao mudar o nome
@@ -259,7 +259,7 @@ void modificarNome(agenda *&nome, agenda *&primeiroNome)
     inserirNome(novo, primeiroNome);
   }
     
-  system("cls"); //limpa a tela
+  system("clear"); //limpa a tela
     
   cout << "Modificado com sucesso" << endl << endl << endl;
   cout << "Pressione qualquer tecla para continuar" << endl;
@@ -274,7 +274,7 @@ void percorrerNomes(agenda *&primeiroNome) //apresenta cada filme, a partir do p
   
   if(atual == NULL)
   {
-    system("cls"); //limpa a tela
+    system("clear"); //limpa a tela
     
     cout << "Lista vazia" << endl << endl <<endl;
     cout << "Pressione qualquer tecla para continuar" << endl;
@@ -284,7 +284,7 @@ void percorrerNomes(agenda *&primeiroNome) //apresenta cada filme, a partir do p
   else
     while(opcao != 'S')
     {
-      system("cls"); //limpa a tela
+      system("clear"); //limpa a tela
       
       cout << "Contatos:" << endl << endl;
       
@@ -339,7 +339,7 @@ void buscarPorNome(agenda *&primeiroNome)
   char buffer[TAMANHO_NOME];
   agenda *atual = primeiroNome;
   
-  system("cls"); //limpa a tela 
+  system("clear"); //limpa a tela 
 
   cout << "Busca por nome" << endl << endl << endl;
   cout << "Nome:" << endl;
@@ -351,7 +351,7 @@ void buscarPorNome(agenda *&primeiroNome)
 
   if(strcmp(atual->nome, buffer) != 0) //nenhum resultado
   {
-    system("cls"); //limpa a tela
+    system("clear"); //limpa a tela
     
     cout << "Nenhum nome foi encontrado" << buffer << endl << endl << endl;
     cout << "Pressione qualquer tecla para continuar" << endl;
@@ -363,7 +363,7 @@ void buscarPorNome(agenda *&primeiroNome)
     while(opcao != 'S')
     {
 
-      system("cls"); //limpa a tela
+      system("clear"); //limpa a tela
       
       cout << "Reultado da busca por nome: "<< buffer << endl << endl;
       
@@ -385,7 +385,7 @@ void buscarPorNome(agenda *&primeiroNome)
 
 
       opcao = getchar();
-      opcao= toupper(opcao);
+      opcao = toupper(opcao);
       
       switch(opcao)
       {
@@ -424,7 +424,7 @@ void buscarPorEmail(agenda *&primeiroNome)
   char buffer[TAMANHO_NOME];
   agenda *atual = primeiroNome;
   
-  system("cls"); //limpa a tela 
+  system("clear"); //limpa a tela 
 
   cout << "Busca por email" << endl << endl <<endl;
   cout << "Email:" << endl;
@@ -436,7 +436,7 @@ void buscarPorEmail(agenda *&primeiroNome)
 
   if(strcmp(atual->email, buffer) != 0) //nenhum resultado
   {
-    system("cls"); //limpa a tela
+    system("clear"); //limpa a tela
     
     cout << "Nenhum email foi encontrado" << buffer << endl << endl << endl;
     cout << "Pressione qualquer tecla para continuar" << endl;
@@ -448,7 +448,7 @@ void buscarPorEmail(agenda *&primeiroNome)
     while(opcao != 'S')
     {
 
-      system("cls"); //limpa a tela
+      system("clear"); //limpa a tela
       
       cout << "Reultado da Busca por email: " << buffer << endl << endl;
       
@@ -482,7 +482,7 @@ void buscarPorEmail(agenda *&primeiroNome)
         
         case 'V':
           atual = atual->anterior;
-          while(strcmp(atual->email, buffer)!=0) //procura um novo resultado            
+          while(strcmp(atual->email, buffer) != 0) //procura um novo resultado            
             atual = atual->anterior;
         break;
       
@@ -509,9 +509,9 @@ void buscarPorTelefone(agenda *&primeiroNome)
   char buffer[TAMANHO_NUMERO];
   agenda *atual = primeiroNome;
   
-  system("cls"); //limpa a tela 
+  system("clear"); //limpa a tela 
 
-  cout << "Busca por Telefone" << endl << endl << endl;
+  cout << "Busca por telefone" << endl << endl << endl;
   cout << "Telefone:" << endl;
 
   cin.getline(buffer, TAMANHO_NUMERO);
@@ -521,7 +521,7 @@ void buscarPorTelefone(agenda *&primeiroNome)
 
   if(atual->telefone != atoi(buffer)) //nenhum resultado
   {
-    system("cls"); //limpa a tela
+    system("clear"); //limpa a tela
     
     cout << "Nenhum email foi encontrado" << buffer << endl << endl << endl;
     cout << "Pressione qualquer tecla para continuar" << endl;
@@ -533,7 +533,7 @@ void buscarPorTelefone(agenda *&primeiroNome)
     while(opcao != 'S')
     {
 
-      system("cls"); //limpa a tela
+      system("clear"); //limpa a tela
       
       cout << "Reultado da busca por email: " << buffer << endl << endl;
       
@@ -594,7 +594,7 @@ void buscarNome(agenda *&primeiroNome)//menu de busca
      
   if(primeiroNome == NULL) //lista vazia
   {
-    system("cls"); //limpa a tela
+    system("clear"); //limpa a tela
     
     cout << "Lista vazia" << endl << endl << endl;
     cout << "Pressione qualquer tecla para continuar" << endl;
@@ -604,7 +604,7 @@ void buscarNome(agenda *&primeiroNome)//menu de busca
   else
     while(opcao != 'S')
     {
-      system("cls"); //limpa a tela
+      system("clear"); //limpa a tela
       
       cout << "Busca de Filmes" << endl << endl << endl;
       cout << "Para buscar um filmes, selecione:" << endl;
@@ -647,7 +647,7 @@ void modificarRemoverNomeMenu(agenda *&primeiroNome) //menu de romocao/modificac
     
   while(opcao != 'S')
   {  
-    system("cls"); //limpa a tela
+    system("clear"); //limpa a tela
     
     cout << "Remover ou modificar" << endl << endl << endl;
     cout << "Para encontrar o nome a ser removido/modificado, selecione:" << endl << endl;
@@ -744,4 +744,3 @@ void finalizar(agenda *&primeiroNome)
     arquivoDados.close();    
   }
 }
-

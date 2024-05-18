@@ -13,7 +13,7 @@ int main ()
     
   while(opcao != 'S') //menu principal
   {  
-    system("cls"); //limpa a tela
+    system("clear"); //limpa a tela
     
     cout << "Lista de nomes" << endl << endl <<endl;
     cout << "P para percorrer" << endl;
