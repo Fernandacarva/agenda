@@ -52,7 +52,7 @@ void removerNomeMenu(agenda *&nome, agenda *&primeiroNome) //apresenta a confirm
   cout << "Remover nome" << endl << endl;
    
   cout.width(TAMANHO_NOME);   cout << left << "Nome";
-  cout.width(TAMANHO_NOME);   cout << left << "Email";
+  cout.width(TAMANHO_NOME);   cout << left << "E-mail";
   cout.width(TAMANHO_NUMERO); cout << left << "Telefone";
   cout.width(TAMANHO_NUMERO); cout << left << "Endereço" << endl << endl;
  
@@ -154,11 +154,11 @@ void inserirNomeMenu(agenda *&primeiroNome) //apresenta menu e lê os dados para
     cin.getline(novo->nome,TAMANHO_NOME);
   }  
   
-  cout << endl << "Diretor:" << endl;
+  cout << endl << "E-mail:" << endl;
   cin.getline(novo->email, TAMANHO_NOME);
   while(!nomeValido(novo->email, VAL_CHARS)) //validar novo nome
   {
-    cout << endl << "Nome Invalido - Digite outro por favor" << endl;
+    cout << endl << "Nome invalido - Digite outro por favor" << endl;
     cin.getline(novo->email, TAMANHO_NOME);
   }  
   
